@@ -5,6 +5,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { purple } from '@material-ui/core/colors';
 
 const innerTheme = createMuiTheme({
+  //direction: 'rtl',
   palette: {
     primary: {
       main: purple[500],
@@ -13,9 +14,10 @@ const innerTheme = createMuiTheme({
 });
 
 const MyComponent = () => {
+  const direction = 'ltr'; //'rtl';
   return (
     <ThemeProvider theme={innerTheme}>
-      <div>
+      <div dir={direction}>
         <Button>Default</Button>
         <Button
           css={css`
